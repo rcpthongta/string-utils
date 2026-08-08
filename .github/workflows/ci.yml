@@ -1,0 +1,14 @@
+name: Continuous Integration
+on:
+  push:
+    branches:
+      - develop
+      - main
+  pull_request:
+    branches:
+      - main
+permissions:
+  contents: read
+jobs:
+  lint:
+    uses: ./.github/workflows/linter.yml
