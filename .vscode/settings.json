@@ -1,0 +1,7 @@
+{
+  "cSpell.allowCompoundWords": true,
+  "cSpell.ignoreRegExpList": [
+    "/[\\u0E00-\\u0E7F]/g"
+  ],
+  "cSpell.language": "en,en-US"
+}
