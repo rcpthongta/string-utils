@@ -1,7 +1,22 @@
 {
+  "[javascript][json][json5][jsonc][jsonl][markdown][yaml]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
   "cSpell.allowCompoundWords": true,
-  "cSpell.ignoreRegExpList": [
-    "/[\\u0E00-\\u0E7F]/g"
-  ],
-  "cSpell.language": "en,en-US"
+  "cSpell.ignoreRegExpList": ["/[\\u0E00-\\u0E7F]/g"],
+  "cSpell.language": "en,en-US",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "editor.formatOnSave": true,
+  "eslint.format.enable": true,
+  "eslint.validate": [
+    "javascript",
+    "json",
+    "json5",
+    "jsonc",
+    "jsonl",
+    "markdown",
+    "yaml"
+  ]
 }
