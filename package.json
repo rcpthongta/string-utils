@@ -42,6 +42,9 @@
     "build": "npm run build:clean && tsup && npm run build:types",
     "build:types": "tsc -p tsconfig.types.json",
     "build:clean": "rimraf dist",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
     "lint": "eslint **/*.{*rc,cjs,js,json,json5,jsonc,jsonl,md,mjs,ts,yaml,yml}",
     "lint:fix": "eslint --fix **/*.{*rc,cjs,js,json,json5,jsonc,jsonl,md,mjs,ts,yaml,yml}"
   },
