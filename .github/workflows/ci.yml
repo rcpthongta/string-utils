@@ -12,3 +12,6 @@ permissions:
 jobs:
   lint:
     uses: ./.github/workflows/linter.yml
+  test:
+    needs: lint
+    uses: ./.github/workflows/test.yml
