@@ -1,5 +1,5 @@
 {
-  "[javascript][json][json5][jsonc][jsonl][markdown][yaml]": {
+  "[javascript][json][json5][jsonc][jsonl][markdown][typescript][yaml]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "cSpell.allowCompoundWords": true,
@@ -17,6 +17,7 @@
     "jsonc",
     "jsonl",
     "markdown",
+    "typescript",
     "yaml"
   ],
   "typescript.tsdk": "node_modules\\typescript\\lib"
