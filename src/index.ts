@@ -1,1 +1,1 @@
-export class StringUtils { }
+export class StringUtils {}
