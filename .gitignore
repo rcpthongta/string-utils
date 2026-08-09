@@ -6,6 +6,10 @@ node_modules/*
 
 dist/*
 
+# Test directory
+
+coverage/*
+
 # Text editor directory and files • Visual Studio Code
 
 .vscode/*
