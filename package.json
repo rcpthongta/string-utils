@@ -26,7 +26,22 @@
   "engines": {
     "node": ">=22"
   },
+  "sideEffects": false,
+  "main": "./dist/cjs/index.cjs",
+  "module": "./dist/esm/index.mjs",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.mjs",
+      "require": "./dist/cjs/index.cjs"
+    }
+  },
+  "files": ["dist"],
   "scripts": {
+    "build": "npm run build:clean && tsup && npm run build:types",
+    "build:types": "tsc -p tsconfig.types.json",
+    "build:clean": "rimraf dist",
     "lint": "eslint **/*.{*rc,cjs,js,json,json5,jsonc,jsonl,md,mjs,yaml,yml}",
     "lint:fix": "eslint --fix **/*.{*rc,cjs,js,json,json5,jsonc,jsonl,md,mjs,yaml,yml}"
   },
