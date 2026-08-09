@@ -39,6 +39,9 @@
   },
   "files": ["dist"],
   "scripts": {
+    "husky:install": "husky",
+    "precommit": "lint-staged",
+    "prepush": "npm run test",
     "build": "npm run build:clean && tsup && npm run build:types",
     "build:types": "tsc -p tsconfig.types.json",
     "build:clean": "rimraf dist",
