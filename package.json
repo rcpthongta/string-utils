@@ -42,8 +42,8 @@
     "build": "npm run build:clean && tsup && npm run build:types",
     "build:types": "tsc -p tsconfig.types.json",
     "build:clean": "rimraf dist",
-    "lint": "eslint **/*.{*rc,cjs,js,json,json5,jsonc,jsonl,md,mjs,yaml,yml}",
-    "lint:fix": "eslint --fix **/*.{*rc,cjs,js,json,json5,jsonc,jsonl,md,mjs,yaml,yml}"
+    "lint": "eslint **/*.{*rc,cjs,js,json,json5,jsonc,jsonl,md,mjs,ts,yaml,yml}",
+    "lint:fix": "eslint --fix **/*.{*rc,cjs,js,json,json5,jsonc,jsonl,md,mjs,ts,yaml,yml}"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.5",
