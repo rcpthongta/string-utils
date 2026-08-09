@@ -7,7 +7,8 @@ const configuration = {
   },
   moduleFileExtensions: ["js", "json", "ts"],
   collectCoverageFrom: ["**/*.(t|j)s"],
-  coverageDirectory: "../coverages/unit",
+  coveragePathIgnorePatterns: ["index\\.ts$"],
+  coverageDirectory: "../coverage",
   verbose: true
 };
 
