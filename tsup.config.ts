@@ -34,5 +34,5 @@ export default defineConfig((): Options[] => {
       tsconfig: "./tsconfig.esm.json",
       ...base
     }
-  ]
+  ];
 });
