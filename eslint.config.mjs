@@ -85,7 +85,7 @@ const configuration = eslint.defineConfig(
     languageOptions: {
       parser: typescript.parser,
       parserOptions: {
-        project: "tsconfig.json",
+        project: "tsconfig.eslint.json",
         tsconfigRootDir: import.meta.dirname
       },
       sourceType: "module"
