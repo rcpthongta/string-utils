@@ -14,7 +14,6 @@ import { hasLength } from "./has-length.lib";
  * defaultIfEmpty("", "default");        // "default"
  * defaultIfEmpty(null, "default");      // "default"
  * defaultIfEmpty(undefined, "default"); // "default"
- *
  */
 export function defaultIfEmpty(str: string | null | undefined, defaultValue: string): string {
   return hasLength(str) ? str : defaultValue;

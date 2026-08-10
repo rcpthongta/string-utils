@@ -14,7 +14,6 @@ import { hasText } from "./has-text.lib";
  * defaultIfBlank("", "default");        // "default"
  * defaultIfBlank(null, "default");      // "default"
  * defaultIfBlank(undefined, "default"); // "default"
- *
  */
 export function defaultIfBlank(str: string | null | undefined, defaultValue: string): string {
   return hasText(str) ? str : defaultValue;
