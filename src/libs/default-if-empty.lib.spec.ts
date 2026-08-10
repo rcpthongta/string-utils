@@ -6,13 +6,13 @@ describe("defaultIfEmpty", (): void => {
       expect(defaultIfEmpty("Hello", "default")).toBe("Hello");
     });
 
-    it("should return the original whitespace-only string (whitespace is kept)", (): void => {
+    it("should return the original whitespace-only string", (): void => {
       expect(defaultIfEmpty("   ", "default")).toBe("   ");
     });
   });
 
   describe("given an empty string", (): void => {
-    it("should return the default value for an empty string", (): void => {
+    it("should return the default value", (): void => {
       expect(defaultIfEmpty("", "default")).toBe("default");
     });
   });
