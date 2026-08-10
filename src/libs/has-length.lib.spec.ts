@@ -39,7 +39,7 @@ describe("hasLength", (): void => {
       expect(hasLength(false)).toBe(false);
     });
 
-    it("should return false for reference types (objects and arrays)", (): void => {
+    it("should return false for reference types", (): void => {
       expect(hasLength({})).toBe(false);
       expect(hasLength([])).toBe(false);
     });

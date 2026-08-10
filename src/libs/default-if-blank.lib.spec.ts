@@ -12,7 +12,7 @@ describe("defaultIfBlank", (): void => {
       expect(defaultIfBlank("   ", "default")).toBe("default");
     });
 
-    it("should return the default value for an empty string", (): void => {
+    it("should return the default value", (): void => {
       expect(defaultIfBlank("", "default")).toBe("default");
     });
   });

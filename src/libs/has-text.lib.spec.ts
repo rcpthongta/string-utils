@@ -47,7 +47,7 @@ describe("hasText", (): void => {
       expect(hasText(false)).toBe(false);
     });
 
-    it("should return false for reference types (objects and arrays)", (): void => {
+    it("should return false for reference types", (): void => {
       expect(hasText({})).toBe(false);
       expect(hasText([])).toBe(false);
     });
