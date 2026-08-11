@@ -23,6 +23,34 @@ describe("camelCase", (): void => {
     it("should handle mixed formats correctly", (): void => {
       expect(camelCase("user-First Name_test")).toBe("userFirstNameTest");
     });
+
+    it("should handle strings containing numbers correctly", (): void => {
+      expect(camelCase("version-2-release")).toBe("version2Release");
+      expect(camelCase("user_1_name")).toBe("user1Name");
+    });
+
+    it("should handle single character strings", (): void => {
+      expect(camelCase("a")).toBe("a");
+      expect(camelCase("A")).toBe("a");
+    });
+
+    it("should handle trailing separators by stripping them", (): void => {
+      expect(camelCase("hello-")).toBe("hello");
+      expect(camelCase("hello_")).toBe("hello");
+      expect(camelCase("hello ")).toBe("hello");
+    });
+
+    it("should handle leading separators by stripping them", (): void => {
+      expect(camelCase("-hello")).toBe("hello");
+      expect(camelCase("_hello")).toBe("hello");
+      expect(camelCase(" hello")).toBe("hello");
+    });
+
+    it("should handle consecutive multiple separators correctly", (): void => {
+      expect(camelCase("hello--world")).toBe("helloWorld");
+      expect(camelCase("foo___bar")).toBe("fooBar");
+      expect(camelCase("hello   world")).toBe("helloWorld");
+    });
   });
 
   describe("given an empty or whitespace string", (): void => {
