@@ -2,6 +2,11 @@ import { camelCase } from "./camel-case.lib";
 
 describe("camelCase", (): void => {
   describe("given a valid string", (): void => {
+    it("should handle single character strings", (): void => {
+      expect(camelCase("a")).toBe("a");
+      expect(camelCase("A")).toBe("a");
+    });
+
     it("should convert space-separated words to camelCase with the first word in lowercase", (): void => {
       expect(camelCase("hello world")).toBe("helloWorld");
       expect(camelCase("hello   world")).toBe("helloWorld");
@@ -29,9 +34,10 @@ describe("camelCase", (): void => {
       expect(camelCase("user_1_name")).toBe("user1Name");
     });
 
-    it("should handle single character strings", (): void => {
-      expect(camelCase("a")).toBe("a");
-      expect(camelCase("A")).toBe("a");
+    it("should handle consecutive multiple separators correctly", (): void => {
+      expect(camelCase("hello--world")).toBe("helloWorld");
+      expect(camelCase("foo___bar")).toBe("fooBar");
+      expect(camelCase("hello   world")).toBe("helloWorld");
     });
 
     it("should handle trailing separators by stripping them", (): void => {
@@ -44,12 +50,6 @@ describe("camelCase", (): void => {
       expect(camelCase("-hello")).toBe("hello");
       expect(camelCase("_hello")).toBe("hello");
       expect(camelCase(" hello")).toBe("hello");
-    });
-
-    it("should handle consecutive multiple separators correctly", (): void => {
-      expect(camelCase("hello--world")).toBe("helloWorld");
-      expect(camelCase("foo___bar")).toBe("fooBar");
-      expect(camelCase("hello   world")).toBe("helloWorld");
     });
   });
 
