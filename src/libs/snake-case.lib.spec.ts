@@ -22,6 +22,18 @@ describe("snakeCase", (): void => {
     it("should handle mixed formats correctly", (): void => {
       expect(snakeCase("user-First NameTest")).toBe("user_first_name_test");
     });
+
+    it("should handle trailing separators by stripping them", (): void => {
+      expect(snakeCase("hello-")).toBe("hello");
+      expect(snakeCase("hello_")).toBe("hello");
+      expect(snakeCase("hello ")).toBe("hello");
+    });
+
+    it("should handle leading separators by stripping them", (): void => {
+      expect(snakeCase("-hello")).toBe("hello");
+      expect(snakeCase("_hello")).toBe("hello");
+      expect(snakeCase(" hello")).toBe("hello");
+    });
   });
 
   describe("given an empty or whitespace string", (): void => {
