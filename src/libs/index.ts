@@ -5,6 +5,7 @@ export * from "./default-if-empty.lib";
 export * from "./has-length.lib";
 export * from "./has-text.lib";
 export * from "./kebab-case.lib";
+export * from "./mask.lib";
 export * from "./pascal-case.lib";
 export * from "./slugify.lib";
 export * from "./snake-case.lib";
