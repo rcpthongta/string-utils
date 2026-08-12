@@ -13,9 +13,9 @@
  * hasText("Hello World"); // true
  * hasText("   ");         // false (only whitespace)
  * hasText("");            // false (empty string)
+ * hasText(123);           // false
  * hasText(null);          // false
  * hasText(undefined);     // false
- * hasText(123);           // false
  */
 export function hasText(str: unknown): str is string {
   return typeof str === "string" && str.trim().length > 0;
