@@ -22,6 +22,18 @@ describe("kebabCase", (): void => {
     it("should handle mixed formats correctly", (): void => {
       expect(kebabCase("user_First NameTest")).toBe("user-first-name-test");
     });
+
+    it("should handle trailing separators by stripping them", (): void => {
+      expect(kebabCase("hello-")).toBe("hello");
+      expect(kebabCase("hello_")).toBe("hello");
+      expect(kebabCase("hello ")).toBe("hello");
+    });
+
+    it("should handle leading separators by stripping them", (): void => {
+      expect(kebabCase("-hello")).toBe("hello");
+      expect(kebabCase("_hello")).toBe("hello");
+      expect(kebabCase(" hello")).toBe("hello");
+    });
   });
 
   describe("given an empty or whitespace string", (): void => {
