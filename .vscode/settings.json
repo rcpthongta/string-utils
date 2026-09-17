@@ -6,5 +6,6 @@
   "cSpell.language": "en,en-US",
   "cSpell.words": [
     "rcpthongta"
-  ]
+  ],
+  "typescript.tsdk": "node_modules\\typescript\\lib"
 }
