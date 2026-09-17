@@ -31,9 +31,7 @@
       "require": "./dist/cjs/index.cjs"
     }
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "engines": {
     "node": ">=22"
   },
@@ -41,12 +39,28 @@
     "build": "npm run build:clean && npm run build:js && npm run build:types",
     "build:clean": "rimraf dist",
     "build:js": "tsup",
-    "build:types": "tsc -p tsconfig.types.json"
+    "build:types": "tsc -p tsconfig.types.json",
+    "lint": "eslint **/*.{*rc,cjs,js,json,json5,jsonc,jsonl,md,mjs,ts,yaml,yml}",
+    "lint:fix": "eslint --fix **/*.{*rc,cjs,js,json,json5,jsonc,jsonl,md,mjs,ts,yaml,yml}"
   },
   "devDependencies": {
+    "@eslint/js": "^9.39.5",
+    "@eslint/markdown": "^7.5.1",
     "@types/node": "^24.13.5",
+    "eslint": "^9.39.5",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-jsonc": "^2.21.1",
+    "eslint-plugin-prettier": "^5.5.6",
+    "eslint-plugin-promise": "^7.3.0",
+    "eslint-plugin-sonarjs": "^4.2.0",
+    "eslint-plugin-unused-imports": "^4.4.1",
+    "eslint-plugin-yml": "^1.19.1",
+    "globals": "^17.12.0",
+    "jsonc-eslint-parser": "^2.4.2",
     "rimraf": "^6.1.3",
     "tsup": "^8.5.1",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.65.0",
+    "yaml-eslint-parser": "^1.3.2"
   }
 }
