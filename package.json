@@ -36,6 +36,9 @@
     "node": ">=22"
   },
   "scripts": {
+    "install:husky": "husky",
+    "precommit": "lint-staged",
+    "prepush": "npm run test:unit",
     "build": "npm run build:clean && npm run build:js && npm run build:types",
     "build:clean": "rimraf dist",
     "build:js": "tsup",
