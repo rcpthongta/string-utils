@@ -31,9 +31,7 @@
       "require": "./dist/cjs/index.cjs"
     }
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "engines": {
     "node": ">=22"
   },
@@ -41,7 +39,9 @@
     "build": "npm run build:clean && npm run build:js && npm run build:types",
     "build:clean": "rimraf dist",
     "build:js": "tsup",
-    "build:types": "tsc -p tsconfig.types.json"
+    "build:types": "tsc -p tsconfig.types.json",
+    "lint": "eslint **/*.{*rc,cjs,js,json,json5,jsonc,jsonl,md,mjs,ts,yaml,yml}",
+    "lint:fix": "eslint --fix **/*.{*rc,cjs,js,json,json5,jsonc,jsonl,md,mjs,ts,yaml,yml}"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.5",
