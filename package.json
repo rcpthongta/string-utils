@@ -38,7 +38,7 @@
   "scripts": {
     "install:husky": "husky",
     "precommit": "lint-staged",
-    "prepush": "npm run test:unit",
+    "prepush": "npm run test && npm run build",
     "build": "npm run build:clean && npm run build:js && npm run build:types",
     "build:clean": "rimraf dist",
     "build:js": "tsup",
