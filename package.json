@@ -31,9 +31,7 @@
       "require": "./dist/cjs/index.cjs"
     }
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "engines": {
     "node": ">=22"
   },
@@ -42,6 +40,10 @@
     "build:clean": "rimraf dist",
     "build:js": "tsup",
     "build:types": "tsc -p tsconfig.types.json",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "bench": "vitest bench --run",
     "lint": "eslint **/*.{*rc,cjs,js,json,json5,jsonc,jsonl,md,mjs,ts,yaml,yml}",
     "lint:fix": "eslint --fix **/*.{*rc,cjs,js,json,json5,jsonc,jsonl,md,mjs,ts,yaml,yml}"
   },
