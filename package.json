@@ -37,6 +37,12 @@
   "engines": {
     "node": ">=22"
   },
+  "scripts": {
+    "build": "npm run build:clean && npm run build:js && npm run build:types",
+    "build:clean": "rimraf dist",
+    "build:js": "tsup",
+    "build:types": "tsc -p tsconfig.types.json"
+  },
   "devDependencies": {
     "@types/node": "^24.13.5",
     "rimraf": "^6.1.3",
