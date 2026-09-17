@@ -1,0 +1,23 @@
+{
+  "version": "0.0.1",
+  "name": "string-utils",
+  "description": "A lightweight, type-safe, dependency-free string utility library for TypeScript and modern JavaScript applications.",
+  "author": "rcpthongta",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rcpthongta/string-utils.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rcpthongta/string-utils/issues"
+  },
+  "keywords": [
+    "string",
+    "string-utils",
+    "string-library",
+    "string-helpers"
+  ],
+  "engines": {
+    "node": ">=22"
+  }
+}
