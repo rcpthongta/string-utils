@@ -11,163 +11,149 @@ const longText1KB: string = "a".repeat(1_000);
 const longText100KB: string = "a".repeat(100_000);
 
 describe("hasText", (): void => {
-  describe("given common short inputs", (): void => {
-    test("benchmarks common short inputs", async ({ bench }: TestContext): Promise<void> => {
-      await bench("non-whitespace text", (): void => {
-        hasText(shortText);
-      }).run();
+  test("given common short inputs", ({ bench }: TestContext): void => {
+    bench("non-whitespace text", (): void => {
+      hasText(shortText);
+    });
 
-      await bench("single non-whitespace character", (): void => {
-        hasText("a");
-      }).run();
+    bench("single non-whitespace character", (): void => {
+      hasText("a");
+    });
 
-      await bench("single whitespace character", (): void => {
-        hasText(" ");
-      }).run();
+    bench("single whitespace character", (): void => {
+      hasText(" ");
+    });
 
-      await bench("whitespace-only string", (): void => {
-        hasText("   ");
-      }).run();
+    bench("whitespace-only string", (): void => {
+      hasText("   ");
     });
   });
 
-  describe("given long inputs", (): void => {
-    test("benchmarks long inputs", async ({ bench }: TestContext): Promise<void> => {
-      await bench("long text", (): void => {
-        hasText(longText);
-      }).run();
+  test("given long inputs", ({ bench }: TestContext): void => {
+    bench("long text", (): void => {
+      hasText(longText);
+    });
 
-      await bench("1 KB non-whitespace string", (): void => {
-        hasText(longText1KB);
-      }).run();
+    bench("1 KB non-whitespace string", (): void => {
+      hasText(longText1KB);
+    });
 
-      await bench("100 KB non-whitespace string", (): void => {
-        hasText(longText100KB);
-      }).run();
+    bench("100 KB non-whitespace string", (): void => {
+      hasText(longText100KB);
+    });
 
-      await bench("long whitespace-only string", (): void => {
-        hasText(longWhitespace);
-      }).run();
+    bench("long whitespace-only string", (): void => {
+      hasText(longWhitespace);
+    });
 
-      await bench("non-whitespace at the beginning", (): void => {
-        hasText(longTextWithTrailingWhitespace);
-      }).run();
+    bench("non-whitespace at the beginning", (): void => {
+      hasText(longTextWithTrailingWhitespace);
+    });
 
-      await bench("non-whitespace at the end", (): void => {
-        hasText(longWhitespaceWithTextAtEnd);
-      }).run();
+    bench("non-whitespace at the end", (): void => {
+      hasText(longWhitespaceWithTextAtEnd);
     });
   });
 
-  describe("given Unicode input", (): void => {
-    test("benchmarks Unicode input", async ({ bench }: TestContext): Promise<void> => {
-      await bench("CJK", (): void => {
-        hasText("你好世界");
-      }).run();
+  test("given Unicode input", ({ bench }: TestContext): void => {
+    bench("CJK", (): void => {
+      hasText("你好世界");
+    });
 
-      await bench("Arabic", (): void => {
-        hasText("مرحبا بالعالم");
-      }).run();
+    bench("Arabic", (): void => {
+      hasText("مرحبا بالعالم");
+    });
 
-      await bench("Thai", (): void => {
-        hasText("สวัสดีชาวโลก");
-      }).run();
+    bench("Thai", (): void => {
+      hasText("สวัสดีชาวโลก");
+    });
 
-      await bench("accented Latin", (): void => {
-        hasText("café");
-      }).run();
+    bench("accented Latin", (): void => {
+      hasText("café");
+    });
 
-      await bench("combining marks", (): void => {
-        hasText("cafe\u0301");
-      }).run();
+    bench("combining marks", (): void => {
+      hasText("cafe\u0301");
+    });
 
-      await bench("emoji", (): void => {
-        hasText("🎉🚀🌟");
-      }).run();
+    bench("emoji", (): void => {
+      hasText("🎉🚀🌟");
     });
   });
 
-  describe("given Unicode whitespace", (): void => {
-    test("benchmarks Unicode whitespace", async ({ bench }: TestContext): Promise<void> => {
-      await bench("non-breaking spaces only", (): void => {
-        hasText("\u00A0\u00A0\u00A0");
-      }).run();
+  test("given Unicode whitespace", ({ bench }: TestContext): void => {
+    bench("non-breaking spaces only", (): void => {
+      hasText("\u00A0\u00A0\u00A0");
+    });
 
-      await bench("ideographic spaces only", (): void => {
-        hasText("\u3000\u3000\u3000");
-      }).run();
+    bench("ideographic spaces only", (): void => {
+      hasText("\u3000\u3000\u3000");
+    });
 
-      await bench("mixed Unicode whitespace only", (): void => {
-        hasText(" \t\n\r\u00A0\u2003\u202F\u3000 ");
-      }).run();
+    bench("mixed Unicode whitespace only", (): void => {
+      hasText(" \t\n\r\u00A0\u2003\u202F\u3000 ");
+    });
 
-      await bench("text surrounded by Unicode whitespace", (): void => {
-        hasText("\u00A0\u3000hello\u2003");
-      }).run();
+    bench("text surrounded by Unicode whitespace", (): void => {
+      hasText("\u00A0\u3000hello\u2003");
     });
   });
 
-  describe("given symbols and emojis", (): void => {
-    test("benchmarks symbols and emojis", async ({ bench }: TestContext): Promise<void> => {
-      await bench("symbol-only string", (): void => {
-        hasText("!@#$%^&*()");
-      }).run();
+  test("given symbols and emojis", ({ bench }: TestContext): void => {
+    bench("symbol-only string", (): void => {
+      hasText("!@#$%^&*()");
+    });
 
-      await bench("single emoji", (): void => {
-        hasText("🔥");
-      }).run();
+    bench("single emoji", (): void => {
+      hasText("🔥");
+    });
 
-      await bench("multiple emojis", (): void => {
-        hasText("🎉🚀🌟");
-      }).run();
+    bench("multiple emojis", (): void => {
+      hasText("🎉🚀🌟");
     });
   });
 
-  describe("given non-string values", (): void => {
-    test("benchmarks non-string values", async ({ bench }: TestContext): Promise<void> => {
-      await bench("number", (): void => {
-        hasText(12345);
-      }).run();
+  test("given non-string values", ({ bench }: TestContext): void => {
+    bench("number", (): void => {
+      hasText(12345);
+    });
 
-      await bench("boolean", (): void => {
-        hasText(true);
-      }).run();
+    bench("boolean", (): void => {
+      hasText(true);
+    });
 
-      await bench("object", (): void => {
-        hasText({ length: 5 });
-      }).run();
+    bench("object", (): void => {
+      hasText({ length: 5 });
+    });
 
-      await bench("object with text property", (): void => {
-        hasText({ text: "hello" });
-      }).run();
+    bench("object with text property", (): void => {
+      hasText({ text: "hello" });
+    });
 
-      await bench("array", (): void => {
-        hasText(["hello"]);
-      }).run();
+    bench("array", (): void => {
+      hasText(["hello"]);
+    });
 
-      await bench("function", (): void => {
-        hasText(() => {});
-      }).run();
+    bench("function", (): void => {
+      hasText(() => {});
+    });
 
-      await bench("symbol", (): void => {
-        hasText(Symbol("text"));
-      }).run();
+    bench("symbol", (): void => {
+      hasText(Symbol("text"));
     });
   });
 
-  describe("given an empty or nullish value", (): void => {
-    test("benchmarks empty and nullish values", async ({ bench }: TestContext): Promise<void> => {
-      await bench("empty string", (): void => {
-        hasText("");
-      }).run();
+  test("given an empty or nullish value", ({ bench }: TestContext): void => {
+    bench("empty string", (): void => {
+      hasText("");
+    });
 
-      await bench("null", (): void => {
-        hasText(null);
-      }).run();
+    bench("null", (): void => {
+      hasText(null);
+    });
 
-      await bench("undefined", (): void => {
-        hasText(undefined);
-      }).run();
+    bench("undefined", (): void => {
+      hasText(undefined);
     });
   });
 });
