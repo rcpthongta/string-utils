@@ -1,4 +1,4 @@
-import { bench, describe } from "vitest";
+import { describe, test, TestContext } from "vitest";
 
 import { hasText } from "./has-text.lib";
 
@@ -11,7 +11,7 @@ const longText1KB: string = "a".repeat(1_000);
 const longText100KB: string = "a".repeat(100_000);
 
 describe("hasText", (): void => {
-  describe("given common short inputs", (): void => {
+  test("given common short inputs", ({ bench }: TestContext): void => {
     bench("non-whitespace text", (): void => {
       hasText(shortText);
     });
@@ -29,7 +29,7 @@ describe("hasText", (): void => {
     });
   });
 
-  describe("given long inputs", (): void => {
+  test("given long inputs", ({ bench }: TestContext): void => {
     bench("long text", (): void => {
       hasText(longText);
     });
@@ -55,7 +55,7 @@ describe("hasText", (): void => {
     });
   });
 
-  describe("given Unicode input", (): void => {
+  test("given Unicode input", ({ bench }: TestContext): void => {
     bench("CJK", (): void => {
       hasText("你好世界");
     });
@@ -81,7 +81,7 @@ describe("hasText", (): void => {
     });
   });
 
-  describe("given Unicode whitespace", (): void => {
+  test("given Unicode whitespace", ({ bench }: TestContext): void => {
     bench("non-breaking spaces only", (): void => {
       hasText("\u00A0\u00A0\u00A0");
     });
@@ -99,7 +99,7 @@ describe("hasText", (): void => {
     });
   });
 
-  describe("given symbols and emojis", (): void => {
+  test("given symbols and emojis", ({ bench }: TestContext): void => {
     bench("symbol-only string", (): void => {
       hasText("!@#$%^&*()");
     });
@@ -113,7 +113,7 @@ describe("hasText", (): void => {
     });
   });
 
-  describe("given non-string values", (): void => {
+  test("given non-string values", ({ bench }: TestContext): void => {
     bench("number", (): void => {
       hasText(12345);
     });
@@ -143,7 +143,7 @@ describe("hasText", (): void => {
     });
   });
 
-  describe("given an empty or nullish value", (): void => {
+  test("given an empty or nullish value", ({ bench }: TestContext): void => {
     bench("empty string", (): void => {
       hasText("");
     });
