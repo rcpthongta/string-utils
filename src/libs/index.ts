@@ -1,3 +1,4 @@
+export * from "./capitalize";
 export * from "./default-if-blank";
 export * from "./default-if-empty";
 export * from "./has-length";
