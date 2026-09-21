@@ -86,6 +86,12 @@ const configuration = eslint.defineConfig(
     }
   },
   {
+    files: ["**/*.bench.ts", "**/*.benchmark.ts"],
+    rules: {
+      "sonarjs/assertions-in-tests": "off"
+    }
+  },
+  {
     files: jsFiles,
     extends: [javascript.configs.recommended],
     rules: {
