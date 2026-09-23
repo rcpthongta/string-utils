@@ -9,6 +9,13 @@ export const CONSECUTIVE_WHITESPACE_REGEX: RegExp = /\s+/g;
 export const DIACRITICS_REGEX: RegExp = /[\u0300-\u036f]/g;
 
 /**
+ * Matches indexed format placeholders with optional dot-separated property paths.
+ *
+ * Captures the full path inside the braces (e.g., `"0"`, `"0.name"`, `"1.items.0.label"`).
+ */
+export const FORMAT_PLACEHOLDER_REGEX: RegExp = /\{(\d+(?:\.\w+)*)\}/g;
+
+/**
  * Matches one or more consecutive characters that are not Unicode letters, combining marks, or numbers.
  */
 export const NON_ALPHANUMERIC_REGEX: RegExp = /[^\p{L}\p{M}\p{N}]+/gu;
