@@ -20,7 +20,7 @@ A lightweight, type-safe, dependency-free string utility library for TypeScript 
 >
 > Full API references, interactive examples, and detailed guides are available on our official website:
 >
-> 👉 **[Visit Documentation Website](https://github.com/rcpthongta/string-utils#readme)** *(Link to docs site)*
+> 👉 **[Visit Documentation Website](https://rcpthongta.github.io/string-utils)**
 
 ---
 
@@ -75,21 +75,29 @@ import {
 } from "@rcpthongta/string-utils";
 
 // Case transformation
-capitalize("hello world"); // "Hello world"
-camelCase("user_profile_id"); // "userProfileId"
+capitalize("hello world");
+// => "Hello world"
+
+camelCase("user_profile_id");
+// => "userProfileId"
 
 // Sanitization & URL
-slugify("Hello World & Special Characters!"); // "hello-world-and-special-characters"
+slugify("Hello World & Special Characters!");
+// => "hello-world-and-special-characters"
 
 // Validation & Fallback
-defaultIfBlank("   ", "default value"); // "default value"
+defaultIfBlank("   ", "default value");
+// => "default value"
 
 // Formatting with mask pattern
-mask("0812345678", "(###) ###-####"); // "(081) 234-5678"
-mask("1234567890123456", "#### #### #### ####"); // "1234 5678 9012 3456"
+mask("0812345678", "(###) ###-####");
+// => "(081) 234-5678"
+mask("1234567890123456", "#### #### #### ####");
+// => "1234 5678 9012 3456"
 
 // Privacy & Censoring
-redact("0812345678", { visibleStart: 3, visibleEnd: 2 }); // "081*****78"
+redact("0812345678", { visibleStart: 3, visibleEnd: 2 });
+// => "081*****78"
 ```
 
 CommonJS is also fully supported:
@@ -111,9 +119,9 @@ Below is a summary of the utility functions available in this package:
 | **Formatting & Templating** | `collapseWhitespace`, `format`, `createFormatter`, `slugify`        |
 | **Pattern Masking**         | `mask`, `createMask`                                                |
 | **Validation & Fallback**   | `hasLength`, `hasText`, `defaultIfBlank`, `defaultIfEmpty`          |
-| **Privacy & Redaction**     | `redact` |
+| **Privacy & Redaction**     | `redact`                                                            |
 
-*(Refer to the [Documentation Website](https://github.com/rcpthongta/string-utils#readme) for full parameter signatures, options, and live demos).*
+*(Refer to the [Documentation Website](https://rcpthongta.github.io/string-utils) for full parameter signatures, options, and live demos).*
 
 ---
 
