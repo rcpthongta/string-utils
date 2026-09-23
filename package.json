@@ -1,5 +1,5 @@
 {
-  "version": "0.0.1",
+  "version": "1.0.0",
   "name": "@rcpthongta/string-utils",
   "description": "A lightweight, type-safe, dependency-free string utility library for TypeScript and modern JavaScript applications.",
   "author": "rcpthongta",
