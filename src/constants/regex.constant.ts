@@ -4,6 +4,16 @@
 export const CONSECUTIVE_WHITESPACE_REGEX: RegExp = /\s+/g;
 
 /**
+ * Matches Unicode combining diacritical marks in the U+0300–U+036F range.
+ */
+export const DIACRITICS_REGEX: RegExp = /[\u0300-\u036f]/g;
+
+/**
+ * Matches one or more consecutive characters that are not Unicode letters, combining marks, or numbers.
+ */
+export const NON_ALPHANUMERIC_REGEX: RegExp = /[^\p{L}\p{M}\p{N}]+/gu;
+
+/**
  * Matches strings that contain whitespace requiring normalization.
  *
  * This includes non-space whitespace characters, consecutive spaces, leading spaces, and trailing spaces.
