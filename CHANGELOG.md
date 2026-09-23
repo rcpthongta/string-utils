@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.0.2] - 2026-09-24
+
+### Added
+
+- **Documentation & Performance**
+  - Dedicated **Benchmarks & Performance** guide detailing execution throughput (ops/sec), architectural design principles, and Bundlephobia footprint.
+  - Custom brand **Favicon** (`favicon.svg`) with pastel gradient SU monogram.
+  - Full **Open Graph** and **Twitter Card** social preview meta tags (`og:image`, `og:url`, `twitter:card`, etc.) across the documentation website.
+  - Branded repository social preview banner assets (`.github/social-preview.jpg` and `docs/public/og-image.jpg`).
+  - Mobile UX and SEO meta tags including `theme-color`, `keywords`, and `author`.
+
 ## [1.0.1] - 2026-09-24
 
 ### Added
@@ -64,5 +75,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
   - Husky, lint-staged, and commitlint for Git hooks and commit validation
   - GitHub Actions workflows for linting and test coverage
 
+[1.0.2]: https://github.com/rcpthongta/string-utils/compare/v1.0.1...v1.0.2
 [1.0.1]: https://github.com/rcpthongta/string-utils/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/rcpthongta/string-utils/releases/tag/v1.0.0
