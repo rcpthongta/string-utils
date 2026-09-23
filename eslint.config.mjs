@@ -18,7 +18,15 @@ const tsFiles = ["**/*.ts"];
 const sourceFiles = [...jsFiles, ...tsFiles];
 
 const configuration = eslint.defineConfig(
-  eslint.globalIgnores(["**/coverage/*", "**/dist/*", "**/node_modules/*", "**/.npmrc", "**/package-lock.json"]),
+  eslint.globalIgnores([
+    "**/coverage/*",
+    "**/dist/*",
+    "**/docs/.vitepress/dist/*",
+    "**/docs/.vitepress/cache/*",
+    "**/node_modules/*",
+    "**/.npmrc",
+    "**/package-lock.json"
+  ]),
   {
     files: sourceFiles,
     languageOptions: {
