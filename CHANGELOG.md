@@ -5,6 +5,24 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](https://semver.org/).
 
+## [1.0.1] - 2026-09-24
+
+### Added
+
+- **Documentation Website**
+  - Interactive documentation site powered by VitePress deployed to GitHub Pages.
+  - Dedicated Getting Started and Installation guides with CDN/IIFE, ESM, and CommonJS examples.
+  - Comprehensive API Reference pages for all 16 utility modules and exported types.
+  - Complete parameter tables, options breakdowns, return types, and empty/null/undefined edge-case examples.
+  - Built-in local search and responsive layout with custom brand theme.
+
+- **CI / CD**
+  - Automated GitHub Pages deployment job in `.github/workflows/release.yml` that runs upon successful npm publishing.
+
+- **Package Metadata**
+  - Added `homepage` URL to `package.json` pointing to the official documentation site.
+  - Updated `README.md` with links to the live documentation website.
+
 ## [1.0.0] - 2026-09-23
 
 ### Added
@@ -46,4 +64,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
   - Husky, lint-staged, and commitlint for Git hooks and commit validation
   - GitHub Actions workflows for linting and test coverage
 
+[1.0.1]: https://github.com/rcpthongta/string-utils/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/rcpthongta/string-utils/releases/tag/v1.0.0
