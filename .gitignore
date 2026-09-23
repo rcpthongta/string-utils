@@ -10,6 +10,12 @@ dist/*
 
 coverage/*
 
+# Documentation
+
+docs/.vitepress/dist
+docs/.vitepress/cache
+
+
 # Text editor directory and files • Visual Studio Code
 
 .vscode/*
