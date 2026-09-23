@@ -10,6 +10,7 @@ export * from "./has-text";
 export * from "./kebab-case";
 export * from "./mask";
 export * from "./pascal-case";
+export * from "./redact";
 export * from "./slugify";
 export * from "./snake-case";
 export * from "./uncapitalize";
