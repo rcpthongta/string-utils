@@ -21,6 +21,16 @@ export const FORMAT_PLACEHOLDER_REGEX: RegExp = /\{(\d+(?:\.\w+)*)\}/g;
 export const NON_ALPHANUMERIC_REGEX: RegExp = /[^\p{L}\p{M}\p{N}]+/gu;
 
 /**
+ * Matches a Unicode decimal digit character, including digits from non-ASCII scripts.
+ */
+export const UNICODE_DIGIT_REGEX: RegExp = /\p{Nd}/u;
+
+/**
+ * Matches a Unicode letter character or combining mark.
+ */
+export const UNICODE_LETTER_REGEX: RegExp = /[\p{L}\p{M}]/u;
+
+/**
  * Matches strings that contain whitespace requiring normalization.
  *
  * This includes non-space whitespace characters, consecutive spaces, leading spaces, and trailing spaces.
