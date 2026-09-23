@@ -1,0 +1,19 @@
+# Dependencies directory
+
+node_modules/*
+
+# Compiled output directory
+
+dist/*
+
+# Test directory
+
+coverage/*
+
+# Text editor directory and files • Visual Studio Code
+
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/settings.json
+!.vscode/tasks.json
