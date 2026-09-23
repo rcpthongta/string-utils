@@ -5,6 +5,117 @@ export default defineConfig({
   title: "@rcpthongta/string-utils",
   description:
     "A lightweight, type-safe, dependency-free string utility library for TypeScript and modern JavaScript applications.",
+  head: [
+    [
+      "link",
+      {
+        rel: "icon",
+        type: "image/svg+xml",
+        href: "/string-utils/favicon.svg"
+      }
+    ],
+    [
+      "meta",
+      {
+        name: "author",
+        content: "rcpthongta"
+      }
+    ],
+    [
+      "meta",
+      {
+        name: "keywords",
+        content:
+          "string-utils, typescript, javascript, zero-dependencies, string manipulation, camelCase, slugify, mask, redact"
+      }
+    ],
+    [
+      "meta",
+      {
+        name: "theme-color",
+        content: "#f4b8e4"
+      }
+    ],
+    [
+      "meta",
+      {
+        property: "og:type",
+        content: "website"
+      }
+    ],
+    [
+      "meta",
+      {
+        property: "og:site_name",
+        content: "@rcpthongta/string-utils"
+      }
+    ],
+    [
+      "meta",
+      {
+        property: "og:url",
+        content: "https://rcpthongta.github.io/string-utils/"
+      }
+    ],
+    [
+      "meta",
+      {
+        property: "og:title",
+        content: "@rcpthongta/string-utils"
+      }
+    ],
+    [
+      "meta",
+      {
+        property: "og:description",
+        content:
+          "A lightweight, type-safe, dependency-free string utility library for TypeScript and modern JavaScript applications."
+      }
+    ],
+    [
+      "meta",
+      {
+        property: "og:image",
+        content: "https://rcpthongta.github.io/string-utils/og-image.jpg"
+      }
+    ],
+    [
+      "meta",
+      {
+        property: "og:image:alt",
+        content: "@rcpthongta/string-utils social preview"
+      }
+    ],
+    [
+      "meta",
+      {
+        name: "twitter:card",
+        content: "summary_large_image"
+      }
+    ],
+    [
+      "meta",
+      {
+        name: "twitter:title",
+        content: "@rcpthongta/string-utils"
+      }
+    ],
+    [
+      "meta",
+      {
+        name: "twitter:description",
+        content:
+          "A lightweight, type-safe, dependency-free string utility library for TypeScript and modern JavaScript applications."
+      }
+    ],
+    [
+      "meta",
+      {
+        name: "twitter:image",
+        content: "https://rcpthongta.github.io/string-utils/og-image.jpg"
+      }
+    ]
+  ],
   themeConfig: {
     nav: [
       {
@@ -31,6 +142,10 @@ export default defineConfig({
           {
             text: "Installation",
             link: "/guide/installation"
+          },
+          {
+            text: "Benchmarks & Performance",
+            link: "/guide/benchmarks"
           }
         ]
       },
